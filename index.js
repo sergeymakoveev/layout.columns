@@ -127,12 +127,6 @@ $(function($){
             //console.log(this.options.els.prevContent.height());
 
             var getColumn=function(cols){
-/*
-                    for each(var col in $.makeArray(cols))
-                        if($(col).width()>0)
-                            return $(col);
-                    return false;
-*/
                     return cols.filter(function(i, col){ return $(col).width()>0; })
                                .first();
                 },
@@ -161,9 +155,9 @@ $(function($){
             //console.log([dx, this.dx, width]);
 
             columns.prev.css({width:width.prev})
-                        .data('width', width.prev);
+                        .data({width:width.prev});
             columns.next.css({width:width.next})
-                        .data('width', width.next);
+                        .data({width:width.next});
 
             width.prev>0?
                 columns.prev.removeClass('collapse'):
