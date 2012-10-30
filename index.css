@@ -1,0 +1,66 @@
+body, html { width: 100%; height: 100%; padding: 0; margin: 0; overflow-x:hidden;}
+
+.wrapper {
+    width:100%;
+    height:100%;
+}
+.table {
+    display:table;
+    border-collapse:collapse;
+    table-layout: fixed;
+}
+.row {
+    display:table-row;
+    height:100%;
+}
+.cell {
+    /* border: 1px dotted #0f0; padding:2px; */
+    display:table-cell;
+}
+
+.cell.left {
+    width:100px;
+}
+.cell.center{
+    width:25%;
+}
+.el-wrapper {
+    overflow:hidden;
+}
+.el-container {
+    overflow:hidden;
+    vertical-align: top;
+}
+.el-content-wrapper {
+    min-width:200px;
+    height: 100px;
+}
+.el-content {
+    position: relative; /* Для скроллинга менять top: -XXpx */
+}
+.el-divider {
+    cursor:col-resize;
+    vertical-align: middle;
+    text-align:center;
+    background-color:#eee;
+    width:20px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+.el-divider .el-button {
+    cursor:pointer;
+    font-size: 1.1em;
+}
+
+.el-divider .el-button.right:before {
+    content:'►';
+    color: #f00;
+}
+.el-divider .el-button.left:before {
+    content:'◄';
+    color: #00f;
+}
+
+.el-container.collapse + .el-divider {
+    border-left:1px solid #000;
+}
+
