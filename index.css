@@ -2,7 +2,6 @@ body, html { width: 100%; height: 100%; padding: 0; margin: 0; overflow-x:hidden
 
 .wrapper {
     width:100%;
-    height:100%;
 }
 .table {
     display:table;
@@ -11,10 +10,8 @@ body, html { width: 100%; height: 100%; padding: 0; margin: 0; overflow-x:hidden
 }
 .row {
     display:table-row;
-    height:100%;
 }
 .cell {
-    /* border: 1px dotted #0f0; padding:2px; */
     display:table-cell;
 }
 
@@ -32,8 +29,9 @@ body, html { width: 100%; height: 100%; padding: 0; margin: 0; overflow-x:hidden
     vertical-align: top;
 }
 .el-content-wrapper {
-    min-width:200px;
-    height: 100px;
+    height: 500px;
+    min-width: 200px; /* убрать для отображения горизонтального скроллинга */
+    overflow: auto;
 }
 .el-content {
     position: relative; /* Для скроллинга менять top: -XXpx */
