@@ -1,64 +1,56 @@
 body, html { width: 100%; height: 100%; padding: 0; margin: 0; overflow-x:hidden;}
 
-.wrapper {
+.ui.layout.wrapper {
     width:100%;
-}
-.table {
     display:table;
-    border-collapse:collapse;
     table-layout: fixed;
 }
-.row {
+.ui.layout.wrapper > .wrapper {
     display:table-row;
 }
-.cell {
+.ui.layout.wrapper > .wrapper > .panel {
     display:table-cell;
-}
-
-.cell.left {
-    width:100px;
-}
-.cell.center{
-    width:25%;
-}
-.el-wrapper {
-    overflow:hidden;
-}
-.el-container {
     overflow:hidden;
     vertical-align: top;
 }
-.el-content-wrapper {
+.ui.layout.wrapper > .wrapper > .panel.left {
+    width:100px;
+}
+.ui.layout.wrapper > .wrapper > .panel.center {
+    width:25%;
+}
+.ui.layout.wrapper > .wrapper > .panel > .wrapper {
     height: 500px;
     min-width: 200px; /* убрать для отображения горизонтального скроллинга */
     overflow: auto;
 }
-.el-content {
-    position: relative; /* Для скроллинга менять top: -XXpx */
+.ui.layout.wrapper > .wrapper > .panel > .wrapper > .content {
+    position: relative;
 }
-.el-divider {
+
+.ui.layout.wrapper > .wrapper > .divider {
+    display:table-cell;
     cursor:col-resize;
     vertical-align: middle;
     text-align:center;
     background-color:#eee;
     width:20px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    box-shadow: 0 -5px 5px rgba(0,0,0,0.5);
+    border-left:1px solid transparent;
 }
-.el-divider .el-button {
+.ui.layout.wrapper > .wrapper > .panel.collapse + .divider {
+    border-left-color: #000;
+}
+.ui.layout.wrapper > .wrapper > .divider > .button {
     cursor:pointer;
     font-size: 1.1em;
 }
 
-.el-divider .el-button.right:before {
+.ui.layout.wrapper > .wrapper > .divider > .button.right:before {
     content:'►';
     color: #f00;
 }
-.el-divider .el-button.left:before {
+.ui.layout.wrapper > .wrapper > .divider > .button.left:before {
     content:'◄';
     color: #00f;
 }
-
-.el-container.collapse + .el-divider {
-    border-left:1px solid #000;
-}
-

@@ -17,14 +17,14 @@ $(function($){
               {columns:{}};
             */
             this.settings={columns:{}};
-            this.element.find('.el-container').each(function(i, el){
+            this.element.find('.panel').each(function(i, el){
               var id='mo.mcl-col-'+i;
               $(el)
                   .attr('id', id)
                   .data('width', $(el).width())
                   .data('width-default', $(el).width());
             });
-            this.element.find('.el-divider').MultiColumnLayoutDivider({parent:this});
+            this.element.find('.divider').MultiColumnLayoutDivider({parent:this});
         }
     });
     $.widget("mo.MultiColumnLayoutDivider", $.ui.mouse, {
@@ -38,7 +38,7 @@ $(function($){
         _create: function() {
             console.log(this);
             this.buttons={
-            left:this.element.find('.el-button.left')
+            left:this.element.find('.button.left')
                              .click($.proxy(function(){
                                 var width = { prev:this.options.els.prevContainer.width(),
                                               next:this.options.els.nextContainer.width() };
@@ -64,7 +64,7 @@ $(function($){
                               );
                               this.options.els.wrapper.css({cursor:''});
                             },this)),
-              right:this.element.find('.el-button.right')
+              right:this.element.find('.button.right')
                   .click($.proxy(function(){
                       var width={
                           prev:this.options.els.prevContainer.width(),
@@ -93,11 +93,9 @@ $(function($){
                       this.options.els.wrapper.css({cursor:''});
                   },this))
           };
-          this.options.els.prevContainer=this.element.prev('.el-container').first();
-          this.options.els.prevContent=this.options.els.prevContainer.find('.el-content');
-          this.options.els.nextContainer=this.element.next('.el-container').first();
-          this.options.els.nextContent=this.options.els.nextContainer.find('.el-content');
-          this.options.els.wrapper=this.element.parents('.el-wrapper').first();
+          this.options.els.prevContainer=this.element.prev('.panel').first();
+          this.options.els.nextContainer=this.element.next('.panel').first();
+          this.options.els.wrapper=this.element.parents('.ui.layout.wrapper').first();
           this._mouseInit();
         },
 
@@ -124,19 +122,17 @@ $(function($){
             this.pageX=event.pageX;
             this.dx+=dx;
 
-            //console.log(this.options.els.prevContent.height());
-
             var getColumn=function(cols){
                     return cols.filter(function(i, col){ return $(col).width()>0; })
                                .first();
                 },
                 columns={
                     prev:dx>0?
-                        this.element.prev('.el-container'):
-                        getColumn(this.element.prevAll('.el-container')),
+                        this.element.prev('.panel'):
+                        getColumn(this.element.prevAll('.panel')),
                     next:dx>0?
-                        getColumn(this.element.nextAll('.el-container')):
-                        this.element.next('.el-container')
+                        getColumn(this.element.nextAll('.panel')):
+                        this.element.next('.panel')
                 };
             if(!columns.prev.size()||!columns.next.size())
                 return;
@@ -177,6 +173,6 @@ $(function($){
       }
     });
 
-    $('.el-wrapper').MultiColumnLayoutManager({qwerty:12345});
+    $('.ui.layout.wrapper').MultiColumnLayoutManager({qwerty:12345});
 
 });
