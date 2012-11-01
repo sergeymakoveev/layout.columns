@@ -15,7 +15,6 @@ body, html { width: 100%; height: 100%; padding: 0; margin: 0; overflow-x:hidden
     display:table-cell;
     overflow:hidden;
     vertical-align: top;
-    height:500px;
 }
 .ui.layout.wrapper > .wrapper > .panel.left {
     width:100px;
@@ -31,7 +30,7 @@ body, html { width: 100%; height: 100%; padding: 0; margin: 0; overflow-x:hidden
     position: relative; /* для передвижения тулбара вниз/вверх */
 }
 .ui.layout.wrapper > .wrapper > .panel > .wrapper {
-    height: 100%;
+    height: 500px;
     min-width: 200px; /* убрать для отображения горизонтального скроллинга */
     overflow: auto;
 }
