@@ -17,14 +17,14 @@ $(function($){
               {columns:{}};
             */
             this.settings={columns:{}};
-            this.element.find('.panel').each(function(i, el){
+            this.element.find('>.panel').each(function(i, el){
               var id='mo.mcl-col-'+i;
               $(el)
                   .attr('id', id)
                   .data('width', $(el).width())
                   .data('width-default', $(el).width());
             });
-            this.element.find('.divider').MultiColumnLayoutDivider({parent:this});
+            this.element.find('>.divider').MultiColumnLayoutDivider({parent:this});
         }
     });
     $.widget("mo.MultiColumnLayoutDivider", $.ui.mouse, {
@@ -62,7 +62,7 @@ $(function($){
                                       },this)
                                   }
                               );
-                              this.options.els.wrapper.css({cursor:''});
+                              this.options.els.wrapper.removeClass('drag');
                             },this)),
               right:this.element.find('.button.right')
                   .click($.proxy(function(){
@@ -90,12 +90,12 @@ $(function($){
                               },this)
                           }
                       );
-                      this.options.els.wrapper.css({cursor:''});
+                      this.options.els.wrapper.removeClass('drag');
                   },this))
           };
           this.options.els.prevContainer=this.element.prev('.panel').first();
           this.options.els.nextContainer=this.element.next('.panel').first();
-          this.options.els.wrapper=this.element.parents('.ui.layout.wrapper').first();
+          this.options.els.wrapper=this.element.parent();
           this._mouseInit();
         },
 
@@ -112,7 +112,7 @@ $(function($){
                   next:this.options.els.nextContainer.width()
                 }
             };
-            this.options.els.wrapper.css({cursor:'col-resize'});
+            this.options.els.wrapper.addClass('drag');
             return true;
         },
 
@@ -169,10 +169,10 @@ $(function($){
 
       _mouseStop: function(event){
           //console.log('_mouseStop');
-          this.options.els.wrapper.css({cursor:''});
+          this.options.els.wrapper.removeClass('drag');
       }
     });
 
-    $('.ui.layout.wrapper').MultiColumnLayoutManager({qwerty:12345});
+    $('.ui.layout.wrapper > .wrapper').MultiColumnLayoutManager({qwerty:12345});
 
 });
