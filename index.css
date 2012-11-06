@@ -1,56 +1,56 @@
 body, html { width: 100%; height: 100%; padding: 0; margin: 0; overflow-x:hidden;}
 
-.ui.layout.wrapper {
+#root.layout.wrapper {
     width:100%;
     display:table;
     table-layout: fixed;
 }
-.ui.layout.wrapper > .panel {
+#root.layout.wrapper > .panel {
     display:table-caption;
     text-align: center;
 }
-.ui.layout.wrapper > .panel.top {
+#root.layout.wrapper > .panel.top {
     box-shadow: 0 0px 5px rgba(0,0,0,0.5);
     caption-side: top;
 }
-.ui.layout.wrapper > .panel.bottom {
+#root.layout.wrapper > .panel.bottom {
     caption-side: bottom;
     box-shadow: 0 0px 5px rgba(0,0,0,0.5);
 }
-.ui.layout.wrapper > .wrapper {
+#root.layout.wrapper > .wrapper {
     display:table-row;
 }
-.ui.layout.wrapper > .wrapper.drag {
+#root.layout.wrapper > .wrapper.drag {
     cursor: col-resize;
 }
-.ui.layout.wrapper > .wrapper > .panel {
+#root.layout.wrapper > .wrapper > .panel {
     display:table-cell;
     overflow:hidden;
     vertical-align: top;
 }
-.ui.layout.wrapper > .wrapper > .panel.left {
+#root.layout.wrapper > .wrapper > .panel.left {
     width:100px;
 }
-.ui.layout.wrapper > .wrapper > .panel.center {
+#root.layout.wrapper > .wrapper > .panel.center {
     width:25%;
 }
-.ui.layout.wrapper > .wrapper > .panel > .toolbar {
+#root.layout.wrapper > .wrapper > .panel > .toolbar {
     text-align: center;
     padding: 10px;
     box-shadow: 0 0px 5px rgba(0,0,0,0.5);
     min-width: 200px; /* задаем минимальную ширину тулбара при ресайзе панели */
     position: relative; /* для передвижения тулбара вниз/вверх */
 }
-.ui.layout.wrapper > .wrapper > .panel > .wrapper {
+#root.layout.wrapper > .wrapper > .panel > .wrapper {
     height: 500px;
     min-width: 200px; /* убрать для отображения горизонтального скроллинга */
     overflow: auto;
 }
-.ui.layout.wrapper > .wrapper > .panel > .wrapper > .content {
+#root.layout.wrapper > .wrapper > .panel > .wrapper > .content {
     position: relative;
 }
 
-.ui.layout.wrapper > .wrapper > .divider {
+#root.layout.wrapper > .wrapper > .divider {
     display:table-cell;
     cursor:col-resize;
     vertical-align: middle;
@@ -59,11 +59,11 @@ body, html { width: 100%; height: 100%; padding: 0; margin: 0; overflow-x:hidden
     border-left:1px solid transparent;
     box-shadow: -2px 1px 2px rgba(0, 0, 0, 0.2);
 }
-.ui.layout.wrapper > .wrapper > .panel.collapse + .divider {
+#root.layout.wrapper > .wrapper > .panel.collapse + .divider {
     border-left-color: #000;
     box-shadow: none;
 }
-.ui.layout.wrapper > .wrapper > .divider > .button {
+#root.layout.wrapper > .wrapper > .divider > .button {
     cursor:pointer;
     font-size: 10px;
     color: rgba(0, 0, 0, 0.5);
@@ -74,21 +74,21 @@ body, html { width: 100%; height: 100%; padding: 0; margin: 0; overflow-x:hidden
     display: none;
     opacity: 0.5;
 }
-.ui.layout.wrapper > .wrapper > .divider:hover > .button {
+#root.layout.wrapper > .wrapper > .divider:hover > .button {
     display: inline-block;
 }
-.ui.layout.wrapper > .wrapper > .divider > .button:hover {
+#root.layout.wrapper > .wrapper > .divider > .button:hover {
      opacity: 1;
 }
-.ui.layout.wrapper > .wrapper > .divider > .button.left {
+#root.layout.wrapper > .wrapper > .divider > .button.left {
     float: left;
 }
-.ui.layout.wrapper > .wrapper > .divider > .button.right {
+#root.layout.wrapper > .wrapper > .divider > .button.right {
     float: right;
 }
 /*
-.ui.layout.wrapper > .wrapper > .divider > .button.left::before,
-.ui.layout.wrapper > .wrapper > .divider > .button.right::after {
+#root.layout.wrapper > .wrapper > .divider > .button.left::before,
+#root.layout.wrapper > .wrapper > .divider > .button.right::after {
     position: absolute;
     display: inline-block;
     margin-top: -150%;
@@ -96,15 +96,15 @@ body, html { width: 100%; height: 100%; padding: 0; margin: 0; overflow-x:hidden
     z-index: 1;
     color: #00f;
 }
-.ui.layout.wrapper > .wrapper > .divider > .button:not(:hover)::before,
-.ui.layout.wrapper > .wrapper > .divider > .button:not(:hover)::after {
+#root.layout.wrapper > .wrapper > .divider > .button:not(:hover)::before,
+#root.layout.wrapper > .wrapper > .divider > .button:not(:hover)::after {
     display: none;
 }
-.ui.layout.wrapper > .wrapper > .divider > .button.left::before {
+#root.layout.wrapper > .wrapper > .divider > .button.left::before {
     content:'◄';
     left: -250%;
 }
-.ui.layout.wrapper > .wrapper > .divider > .button.right::after {
+#root.layout.wrapper > .wrapper > .divider > .button.right::after {
     content:'►';
     right: -250%;
 }

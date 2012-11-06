@@ -173,6 +173,6 @@ $(function($){
       }
     });
 
-    $('.ui.layout.wrapper > .wrapper').MultiColumnLayoutManager({qwerty:12345});
+    $('#root.layout.wrapper > .wrapper').MultiColumnLayoutManager({qwerty:12345});
 
 });
